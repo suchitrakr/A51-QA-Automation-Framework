@@ -33,21 +33,5 @@ public class BaseTest
         driver.get(url);
         action = new Actions(driver);
     }
-    public void provideEmail()
-    {
-        WebElement email = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type='email']")));
-        email.clear();
-        email.sendKeys("suchitra.kumari@testpro.io");
-    }
-    public void providePwd()
-    {
-        WebElement pwd = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type='password']")));
-        pwd.clear();
-        pwd.sendKeys("SuchitraKumari1@");
-    }
-    public void clickSubmit()
-    {
-        WebElement clickSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[type='submit']")));
-        clickSubmit.click();
-    }
+
 }
