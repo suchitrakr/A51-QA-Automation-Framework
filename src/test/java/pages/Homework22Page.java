@@ -11,9 +11,9 @@ public class Homework22Page extends BasePage
     {
         super(givenDriver);
     }
-    By doubleClickPlaylist = By.cssSelector(".playlist:nth-child(3)");
-    By changeNamePlaylist = By.cssSelector("[name='name']");
-    By actualDisplayedMessage = By.xpath("//div[@class=\"success show\"]");
+    private By doubleClickPlaylist = By.cssSelector(".playlist:nth-child(3)");
+    private By changeNamePlaylist = By.cssSelector("[name='name']");
+    private By actualDisplayedMessage = By.xpath("//div[@class=\"success show\"]");
 
     public void doubleClickPlaylist()
     {
