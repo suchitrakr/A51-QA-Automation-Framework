@@ -12,12 +12,12 @@ import java.time.Duration;
 
 public class BasePage
 {
-    WebDriver driver = null;
-    WebDriverWait wait = null;
-    Actions actions;
-    By emailField = By.cssSelector("input[type='email']");
-    By passwordField = By.cssSelector("input[type='password']");
-    By submitBtn = By.cssSelector("button[type='submit']");
+    protected WebDriver driver = null;
+    protected WebDriverWait wait = null;
+    protected Actions actions;
+    private By emailField = By.cssSelector("input[type='email']");
+    private By passwordField = By.cssSelector("input[type='password']");
+    private By submitBtn = By.cssSelector("button[type='submit']");
     public BasePage(WebDriver givenDriver)
     {
         driver =givenDriver;
@@ -29,11 +29,11 @@ public class BasePage
     {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-    public void click(By locator)
+    protected void click(By locator)
     {
         findElement(locator).click();
     }
-    public void doubleClick(By locator)
+    protected void doubleClick(By locator)
     {
         actions.doubleClick(findElement(locator)).perform();
     }
