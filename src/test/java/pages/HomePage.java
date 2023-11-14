@@ -1,15 +1,12 @@
 package pages;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends BasePage
-{
-       public HomePage(WebDriver givenDriver)
-    {
-        super(givenDriver);
-    }
+public class HomePage extends BasePage {
+    // WebElements specific to the home page
     @FindBy(css = ".playlist:nth-child(3)")
     private WebElement doubleClickPlaylist;
 
@@ -19,19 +16,29 @@ public class HomePage extends BasePage
     @FindBy(css = "div.success.show")
     private WebElement actualDisplayedMessage;
 
-    public void doubleClickPlaylist()
-    {
-        actions.doubleClick(doubleClickPlaylist).build().perform();
+    // Constructor to initialize the WebDriver through the BasePage constructor
+    public HomePage(WebDriver givenDriver) {
+        super(givenDriver);
     }
-    public void enterNewPlaylistName(String playlistName)
-    {
-        changeNamePlaylist.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.BACK_SPACE));
-        changeNamePlaylist.sendKeys(playlistName);
-        changeNamePlaylist.sendKeys(Keys.ENTER);
+
+    // Method to perform a double click on the playlist element
+    public void doubleClickPlaylist() {
+        actions.doubleClick(findElement(doubleClickPlaylist)).perform();
     }
-    public String actualDisplayedMessage()
-    {
-        return actualDisplayedMessage.getText();
+
+    // Method to enter a new playlist name, select the existing text, and submit the changes
+    public void enterNewPlaylistName(String namePlayList) {
+        WebElement playlistElement = findElement(changeNamePlaylist);
+
+        // Clear existing text, enter new text, select all, and submit
+        playlistElement.sendKeys(namePlayList);
+        playlistElement.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
+        playlistElement.sendKeys(namePlayList);
+        playlistElement.sendKeys(Keys.ENTER);
+    }
+
+    // Method to retrieve the text of the actual displayed message element
+    public String actualDisplayedMessage() {
+        return findElement(actualDisplayedMessage).getText();
     }
 }
-
