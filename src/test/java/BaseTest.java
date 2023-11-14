@@ -16,9 +16,9 @@ import java.time.Duration;
 
 public class BaseTest
 {
-    public static WebDriver driver = null;
-    public static WebDriverWait wait=null;
-    public static Actions action = null;
+    protected static WebDriver driver = null;
+    protected static WebDriverWait wait=null;
+    protected static Actions action = null;
     @BeforeSuite
     @Parameters({"BaseUrl"})
     static void setupClass(String BaseUrl)
