@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
     // WebElements specific to the home page
-    @FindBy(css = ".playlist:nth-child(3)")
+    @FindBy(css = ".playlist:nth-child(4)")
     private WebElement doubleClickPlaylist;
 
     @FindBy(css = "[name='name']")
