@@ -2,10 +2,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.HomePage;
-public class Homework24 extends BaseTest
+public class Homework25 extends BaseTest
 {
-    String newPlayListName ="PlaylistNew1";
-    String ExpectedMessage = "Updated playlist \"PlaylistNew1.\"";
+    String newPlayListName ="playlist3New";
+    String ExpectedMessage = "Updated playlist \"playlist3New.\"";
     @Test
     public void renamePlaylist() {
         BasePage basePage = new BasePage(driver);
